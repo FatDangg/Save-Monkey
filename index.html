@@ -78,20 +78,91 @@
         transform: translate(-50%, -50%);
         color: white;
     }
-    #box-big-picture{
+    #box-big-picture {
         width: 102%;
         height: 90%;
         position: relative;
         left: -1%;
         top: -1%;
         background-color: black;
+        overflow: hidden; /* Ensures the images stay within the container */
     }
-    #bigimage{
+    .carousel-dots {
+        position: absolute;
+        bottom: 20px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .carousel-dots span {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 5px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+    }
+
+    .active-dot {
+        background-color: #717171;
+    }
+
+    .carousel {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .carousel-controls {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        transform: translateY(-50%);
+    }
+
+    .carousel-controls button {
+        background-color: rgba(0, 0, 0, 0.5);
+        border: none;
+        color: white;
+        font-size: 20px;
+        padding: 10px;
+        cursor: pointer;
+    }
+    #bigimage1{
         height: 99%;
         width: 90%;
         position: relative;
         left: 5%;
         top: 1%;
+        margin-right: 20%;
+        margin-left: 8%;
+    }
+    #bigimage2{
+        height: 99%;
+        width: 90%;
+        position: relative;
+        left: 5%;
+        top: 1%;
+        margin-right: 20%;
+        margin-left: 8%;
+    }
+    #bigimage3{
+        height: 99%;
+        width: 90%;
+        position: relative;
+        left: 5%;
+        top: 1%;
+        margin-right: 20%;
+        margin-left: 8%;
+        margin-top: 2%;
     }
     #quote{
         height: 30%;
@@ -198,6 +269,29 @@
             transform: scale(1) rotate(0);
         }
     }
+    .carousel-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 70px; /* Increase the size of the arrow */
+        color: white;
+        padding: 10px; /* Add padding to make the clickable area larger */
+        border-radius: 50%; /* Make the arrows circular */
+        cursor: pointer;
+        z-index: 1000;
+    }
+
+    .carousel-arrow.left {
+        left: 10px; /* Position the left arrow */
+    }
+
+    .carousel-arrow.right {
+        right: 10px; /* Position the right arrow */
+    }
+
+    .carousel-arrow:hover {
+        background-color: rgba(0, 0, 0, 0.7); /* Change background color on hover */
+    }
 /*<img src="Paypal_2014_logo.png" id="pay" 
         onclick="document.getElementById('fadebox').style.visibility='hidden'; 
         document.getElementById('popbox').style.visibility='hidden';
@@ -228,7 +322,23 @@
         <p id="textheader3">DONATE</p>
     </div>
     <div id="box-big-picture">
-        <img src="lead.png" id="bigimage">
+        <div class="carousel" id="carousel">
+            <img src="lead.png" id="bigimage1">
+            <img src="截圖 2024-09-03 下午8.24.37.png" id="bigimage2">
+            <img src="1725366430188-c83f162c-ff21-0546-8c32-8fd4e9136333.png" id="bigimage3">
+        </div>
+        <div class="carousel-container">
+            <div class="carousel-arrow left" onclick="prevSlide()">&#10094;</div> <!-- Left arrow -->
+            <div class="carousel">
+                <!-- Your images go here -->
+            </div>
+            <div class="carousel-arrow right" onclick="nextSlide()">&#10095;</div> <!-- Right arrow -->
+        </div>
+        <div class="carousel-dots" id="carousel-dots">
+            <span onclick="moveToSlide(0)" class="active-dot"></span>
+            <span onclick="moveToSlide(1)"></span>
+            <span onclick="moveToSlide(2)"></span>
+        </div>
     </div>
     <div id="quote">
         <center><p id="quote-text">Respect.<br>Repsect for each other.<br>Respect for the environment, respect for animals.<br>-----Oliver Chen</p></center>
@@ -283,7 +393,46 @@
             </tr>
         </table>
     </div>
-    
+    <script>
+    let currentIndex = 0;
+    const slides = document.querySelectorAll('.carousel img');
+    const dots = document.querySelectorAll('.carousel-dots span');
+    const totalSlides = slides.length;
+
+    function showSlide(index) {
+        const carousel = document.getElementById('carousel');
+        carousel.style.transform = `translateX(${-index * 100}%)`;
+    }
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        showSlide(currentIndex);
+        updateDots(currentIndex);
+    }
+
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        showSlide(currentIndex);
+        updateDots(currentIndex);
+    }
+
+    function moveToSlide(index) {
+        currentIndex = index;
+        showSlide(index);
+        updateDots(index);
+    }
+
+    function updateDots(index) {
+        dots.forEach((dot, i) => {
+            if (i === index) {
+                dot.classList.add('active-dot');
+            } else {
+                dot.classList.remove('active-dot');
+            }
+    });
+}
+
+    </script>
 </body>
 
 </html>
