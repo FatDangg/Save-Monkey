@@ -208,7 +208,11 @@
     <div id="fadebox"></div>
     <div id="popbox">
         
-        <button type="button" id="exit" onclick="window.close();">Exit</button>
+        <button type="button" id="exit" 
+        onclick="document.getElementById('fadebox').style.visibility='hidden'; 
+            document.getElementById('popbox').style.visibility='hidden';
+            document.getElementById('popup-font').style.visibility='hidden';
+            document.getElementById('pay').style.visibility='hidden'">Exit</button>
         <center><p id="popup-font" onclick="">Want to save monkey? Donate NOW!</p></center>
         <center><a href="https://protect.worldwildlife.org/page/71990/donate/1?ea.tracking.id=EN_Closed" target="_blank"><img src="Paypal_2014_logo.png" id="pay" 
             onclick="document.getElementById('fadebox').style.visibility='hidden'; 
