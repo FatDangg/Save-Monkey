@@ -5,6 +5,9 @@
     <link rel="shortcut icon" type="image/x-icon" href="favicon_io/favicon.ico">
 </Head>
 <style type="text/css">
+    :root {
+        --background-color: white;
+    }
     #fadebox{
         width: 101%;
         height: 101%;
@@ -30,6 +33,7 @@
         width: 102%;
         height: 20%;
         position: relative;
+        z-index: -1;
         left: -1%;
         top: -1%;
         background-color: black;
@@ -239,6 +243,11 @@
         cursor: pointer;
         border-radius: 10px;
     }
+    #exesmalllogo {
+        height: 10%;
+        width: 10%;
+        position: relative;
+    }
 
     @keyframes bn53bounce {
         5%,
@@ -302,9 +311,84 @@
         document.getElementById('popbox').style.visibility='hidden';
         document.getElementById('popup-font').style.visibility='hidden';
         document.getElementById('pay').style.visibility='hidden';>*/
+    #colorPicker {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 10001;
+    width: 40px;
+    height: 40px;
+    border: none;
+    outline: none;
+    }
+    #pic-jump-box {
+        background-color: F6EED2;
+        height: 101%;
+        width: 101%;
+        z-index: 10000000000;
+        position: fixed;
+        top: -1%;
+        left: -1%;
+        visibility: hidden;}
+        /* Dropdown Button */
+    .dropbtn {
+        background-color: #84d645;
+        color: white;
+        padding: 16px;
+        font-size: 50px;
+        border: none;
+        font-family: impact;
+    }   
 
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: absolute;
+  display: inline-block;
+  width: 40%;
+  left: 70%;
+  top: 10%;
+  
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-family: impact;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
 </style>
 <body bgcolor="white">
+    <div class="dropdown">
+        <button class="dropbtn">Useful Link</button>
+        <div class="dropdown-content">
+          <a href="https://www.nationalgeographic.com/">National Geographic</a>
+          <a href="https://www.savingmonkeys.org/">Saving Monkeys.org</a>
+          <a href="https://savethechimps.org/">Save the Chimps</a>
+        </div>
+    </div>
+    <div id="pic-jump-box"></div>
     <div id="fadebox"></div>
     <div id="popbox">
         <button type="button" id="exit" 
@@ -352,13 +436,13 @@
     <center><table></center>
     <tr>
         <td>
-            <center><img src="20 2.jpeg" height="300"></img></center>
+            <center><img src="20 2.jpeg" height="300" id="pic1"></img></center>
         </td>
         <td>
-            <center><img src="IMG_7491 2.JPG" height="300"></img></center>
+            <center><img src="IMG_7491 2.JPG" height="300" id="pic2"></img></center>
         </td>
         <td>
-            <center><img src="0A6551E5-D9A9-4F9F-863A-F95981193776 2.jpeg" height="300"></img></center>
+            <center><img src="0A6551E5-D9A9-4F9F-863A-F95981193776 2.jpeg" height="300" id="pic3"></img></center>
         </td>
     </tr>
     <tr>
@@ -384,6 +468,15 @@
         </td>
     </br>
     </table>
+    
+
+
+
+
+
+
+
+
     <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
     <div id="instagram-container">
         <div class="elfsight-app-02f20318-7056-4b1a-9410-c973a96775c8" data-elfsight-app-lazy></div>
