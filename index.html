@@ -331,28 +331,97 @@
         top: -1%;
         left: -1%;
         visibility: hidden;}
-        /* Dropdown Button */
+        /* Dropdown Button #84d645 */
     .dropbtn {
-        background-color: #84d645;
+        background-color: transparent;
+        color: white;
+        padding: 16px;
+        font-size: 50px;
+        border: none;
+        font-family: impact;
+    }  
+    .dropbtn2 {
+        background-color: transparent;
         color: white;
         padding: 16px;
         font-size: 50px;
         border: none;
         font-family: impact;
     }   
+    .dropbtn3 {
+        background-color: transparent;
+        color: white;
+        padding: 16px;
+        font-size: 50px;
+        border: none;
+        font-family: impact;
+    } 
+    .dropbtn4 {
+        background-color: transparent;
+        color: white;
+        padding: 16px;
+        font-size: 50px;
+        border: none;
+        font-family: impact;
+    }  
 
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
   position: absolute;
   display: inline-block;
-  width: 40%;
+  width: 18%;
   left: 70%;
-  top: 10%;
+  top: 8%;
   
+}
+.dropdown2 {
+  position: absolute;
+  display: inline-block;
+  width: 13%;
+  left: 55%;
+  top: 8%;
+}
+.dropdown3 {
+  position: absolute;
+  display: inline-block;
+  width: 20%;
+  left: 33%;
+  top: 8%;
+}
+.dropdown4 {
+  position: absolute;
+  display: inline-block;
+  width: 15%;
+  left: 16%;
+  top: 8%;
 }
 
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown-content2 {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown-content3 {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown-content4 {
   display: none;
   position: absolute;
   background-color: #f1f1f1;
@@ -369,15 +438,44 @@
   display: block;
   font-family: impact;
 }
+.dropdown-content2 a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-family: impact;
+}
+.dropdown-content3 a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-family: impact;
+}
+.dropdown-content4 a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-family: impact;
+}
 
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {background-color: #ddd;}
-
+.dropdown-content2 a:hover {background-color: #ddd;}
+.dropdown-content3 a:hover {background-color: #ddd;}
+.dropdown-content4 a:hover {background-color: #ddd;}
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {display: block;}
+.dropdown2:hover .dropdown-content2 {display: block;}
+.dropdown3:hover .dropdown-content3 {display: block;}
+.dropdown4:hover .dropdown-content4 {display: block;}
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {background-color: #3e8e41;}
+.dropdown2:hover .dropbtn2 {background-color: #3e8e41;}
+.dropdown3:hover .dropbtn3 {background-color: #3e8e41;}
+.dropdown4:hover .dropbtn4 {background-color: #3e8e41;}
 </style>
 <body bgcolor="white">
     <div class="dropdown">
@@ -388,6 +486,37 @@
           <a href="https://savethechimps.org/">Save the Chimps</a>
         </div>
     </div>
+    <div class="dropdown2">
+        <button class="dropbtn2">Donate</button>
+        <div class="dropdown-content2">
+          <a href="https://www.nationalgeographic.com/">National Geographic</a>
+          <a href="https://www.savingmonkeys.org/">Saving Monkeys.org</a>
+          <a href="https://savethechimps.org/">Save the Chimps</a>
+        </div>
+    </div>
+    <div class="dropdown3">
+        <button class="dropbtn3">Get Involved</button>
+        <div class="dropdown-content3">
+          <a href="https://www.nationalgeographic.com/">National Geographic</a>
+          <a href="https://www.savingmonkeys.org/">Saving Monkeys.org</a>
+          <a href="https://savethechimps.org/">Save the Chimps</a>
+        </div>
+    </div>
+    <div class="dropdown4">
+        <button class="dropbtn4">Our Work</button>
+        <div class="dropdown-content4">
+          <a href="https://www.nationalgeographic.com/">National Geographic</a>
+          <a href="https://www.savingmonkeys.org/">Saving Monkeys.org</a>
+          <a href="https://savethechimps.org/">Save the Chimps</a>
+        </div>
+    </div>
+    <div id="box1">
+        <img src="pixil-frame-0.png" id="logo">
+        <p id="textheader"></p>
+        <p id="textheader2"></p>
+        <p id="textheader3"></p>
+    </div>
+    <!--OUR WORK, GET INVOLVED, DONATE-->
     <div id="pic-jump-box"></div>
     <div id="fadebox"></div>
     <div id="popbox">
@@ -402,13 +531,6 @@
             document.getElementById('popbox').style.visibility='hidden';
             document.getElementById('popup-font').style.visibility='hidden';
             document.getElementById('pay').style.visibility='hidden'"</img></a></center>
-    </div>
-
-    <div id="box1">
-        <img src="pixil-frame-0.png" id="logo">
-        <p id="textheader">OUR WORK</p>
-        <p id="textheader2">GET INVOLVED</p>
-        <p id="textheader3">DONATE</p>
     </div>
     <div id="box-big-picture">
         <div class="carousel" id="carousel">
